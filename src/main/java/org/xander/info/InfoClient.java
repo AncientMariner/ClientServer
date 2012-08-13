@@ -24,7 +24,7 @@ public class InfoClient {
             System.out.println("There was an internal error, please try again...");
             e.printStackTrace();
         } catch (IOException e) {
-            System.out.println("Thre was an internal error in input/output operations, please try again...");
+            System.out.println("There was an internal error in input/output operations, please try again...");
             e.printStackTrace();
         }
     }
