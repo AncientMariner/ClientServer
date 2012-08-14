@@ -5,8 +5,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
+import java.util.logging.Logger;
 
 public class InfoClient {
+
+    static Logger logger = Logger.getLogger(InfoClient.class.getName());
+
     public void go() throws ClassNotFoundException {
         try {
             Socket s = new Socket("127.0.0.1", 4242);
@@ -22,9 +26,11 @@ public class InfoClient {
 
         } catch (EOFException e){
             System.out.println("There was an internal error, please try again...");
+            logger.severe("EOFException happens...");
             e.printStackTrace();
         } catch (IOException e) {
             System.out.println("There was an internal error in input/output operations, please try again...");
+            logger.severe("IOException happens...");
             e.printStackTrace();
         }
     }
